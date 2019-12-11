@@ -22,6 +22,9 @@ gem 'bcrypt', '3.1.11'
  gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+gem 'carrierwave'
+gem 'mini_magick'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
