@@ -19,9 +19,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 gem 'bcrypt', '3.1.11'
- gem 'pry-rails'
-  gem 'better_errors'
-  gem 'binding_of_caller'
+gem 'pry-rails'
+gem 'better_errors'
+gem 'binding_of_caller'
 gem 'carrierwave'
 gem 'mini_magick'
 

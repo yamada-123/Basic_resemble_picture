@@ -1,7 +1,10 @@
-<h1>ブログ一覧</h1>
+
+   <% if logged_in? %>
+  <h1>ブログ一覧</h1>
 <%= notice %>
 <table>
   <tr>
+    <th>投稿者</th>
     <th>タイトル</th>
     <th>内容</th>
     <th>ファイル</th>
@@ -9,6 +12,7 @@
 
   <% @blogs.each do |blog| %>
     <tr>
+      <td><%= blog.user.name %></td>
       <td><%= blog.title %></td>
       <td><%= blog.content %></td>
       <td><%= blog.image %></td>
@@ -22,3 +26,5 @@
     <br>
 
     <%= link_to '新しくブログを投稿する', new_blog_path %>
+    <% end %>
+

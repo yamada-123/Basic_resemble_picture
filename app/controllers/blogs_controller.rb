@@ -10,35 +10,33 @@ class BlogsController < ApplicationController
   end
 
   def create
-   @blog = Blog.new(blog_params)
-   if params[:back]
-    render :new
-   else 
-   
-   if @blog.save
-      redirect_to blogs_path, notice: "ブログを作成しました。"
-    else
-      render :'new'
+    @blog = current_user.blogs.build(blog_params)
+    if params[:back]
+      render :new
+    else 
+      
+      if @blog.save
+        redirect_to blogs_path, notice: "ブログを作成しました。"
+      else
+        render :'new'
+      end
     end
-  end
   end
 
   def show
-   @blog = Blog.find(params[:id])
   end
 
   def edit
-    @blog = Blog.find(params[:id])
   end
 
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice:"ブログを編集しました"
+      redirect_to blogs_path, notice: "ブログを編集しました！"
     else
       render :edit
+    end
   end
-end
 
 def destroy
   @blog.destroy
@@ -46,7 +44,9 @@ def destroy
 end
 
 def confirm
-  @blog = Blog.new(blog_params)
+  @blog = current_user.blogs.build(blog_params)
+
+
   render :new if @blog.invalid?
 end
 
@@ -59,4 +59,5 @@ end
   def set_blog
     @blog = Blog.find(params[:id])
   end
+
 end
