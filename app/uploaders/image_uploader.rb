@@ -1,5 +1,5 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
+   #Include RMagick or MiniMagick support:
    #include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
   #保存形式の設定
   # storage :fog
-  process :resize_to_limit => [5, 5]
+  process :resize_to_limit => [50, 50]
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

@@ -15,6 +15,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rmagick'
 
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
